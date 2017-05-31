@@ -7,7 +7,6 @@ namespace Ewetasker\Performer;
 */
 class MipPerformer
 {
-    private $mip_perfomer;
     
     function __construct()
     {
