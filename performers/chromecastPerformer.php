@@ -16,6 +16,6 @@ class ChromecastPerformer
 
     function playVideo($parameter)
     {
-        shell_exec('python ../performers/playVideo.py ' . $parameter);
+        shell_exec('python ./performers/playVideo.py ' . $parameter);
     }
 }
