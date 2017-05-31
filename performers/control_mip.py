@@ -6,8 +6,7 @@ To Use:
 ./control_mip.py --i hci0 -b B4:99:4C:48:CA:23
 """
 import logging, argparse, time, sys, json,random, math
-import mip
-import mip.src.mippy as mippy
+import mippy
 
 
 
