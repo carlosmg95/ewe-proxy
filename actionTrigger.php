@@ -59,6 +59,7 @@ foreach ($actions as $action) {
             $apiai = new ApiaiPerformer();
             switch ($action['action']) {
                 case 'Send event':
+                print_r("evento enviado");
                     $apiai->sendEvent($action['parameter']);
                     break;
                 

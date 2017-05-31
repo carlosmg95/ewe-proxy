@@ -17,11 +17,12 @@ class ApiaiPerformer
     function sendEvent($message)
     {
 		$url = "https://api.api.ai/api/query?v=20150910";
-        $sessionId = '02b90d41-de25-48ee-99c8-cf2c5f016433';
+        $sessionId = '62f53181-2f82-4967-a8ca-fec05c13c12c';
 		$data = array('text'=>$message );
 		$event = array('name'=> 'event_reminder', 'data'=>$data);
 		$data_send = array("event" => $event,'timezone'=>'Europe/Madrid', 'lang'=>'en', 'sessionId'=>$sessionId);     
 		$data_string = json_encode($data_send);  
+		print_r("DENTRO DEL PERFORMER");
 		$curl = curl_init($url);
 		curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
 		curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);                                                                  
