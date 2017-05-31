@@ -21,6 +21,9 @@ if (isset($_POST['channel']) && isset($_POST['action'])) {
 }
 
 foreach ($actions as $action) {
+    echo $action;
+    echo $action['channel'];
+    echo $action['action'];
     switch ($action['channel']) {
         case 'Chromecast':
             $chromecast = new ChromecastPerformer();
@@ -59,7 +62,8 @@ foreach ($actions as $action) {
             $apiai = new ApiaiPerformer();
             switch ($action['action']) {
                 case 'Send event':
-                print_r("evento enviado");
+                    print_r("evento enviado");
+                    echo ("evento enviado");
                     $apiai->sendEvent($action['parameter']);
                     break;
                 
