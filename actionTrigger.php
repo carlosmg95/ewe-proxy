@@ -62,8 +62,6 @@ foreach ($actions as $action) {
             $apiai = new ApiaiPerformer();
             switch ($action['action']) {
                 case 'Send event':
-                    print_r("evento enviado");
-                    echo ("evento enviado");
                     $apiai->sendEvent($action['parameter']);
                     break;
                 
@@ -73,10 +71,10 @@ foreach ($actions as $action) {
             }
             unset($huelight);
             break;
-        case 'robot_mip':
+        case 'RobotMip':
             $mip = new MipPerformer();
             switch ($action['action']) {
-                case 'Control mip':
+                case 'ControlRobot':
                     $mip->controlMip($action['parameter']);
                     break;
                 

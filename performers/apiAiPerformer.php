@@ -17,7 +17,7 @@ class ApiaiPerformer
     function sendEvent($message)
     {
 		$url = "https://api.api.ai/api/query?v=20150910";
-        $sessionId = '62f53181-2f82-4967-a8ca-fec05c13c12c';
+        $sessionId = '1234';
 		$data = array('text'=>$message );
 		$event = array('name'=> 'event_reminder', 'data'=>$data);
 		$data_send = array("event" => $event,'timezone'=>'Europe/Madrid', 'lang'=>'en', 'sessionId'=>$sessionId);     

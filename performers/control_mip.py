@@ -8,22 +8,9 @@ To Use:
 import logging, argparse, time, sys, json,random, math
 import mippy
 
-
-
 def prueba_movement():
 	
-	robot.left(46)
-	time.sleep(1)
-	robot.forward(0.4)
-	time.sleep(1)
-	robot.left(456)
-	time.sleep(1)
-	robot.reverse(0.2)
-	time.sleep(1)
-	robot.right(34)
-	robot.reverse(0.2)
-	time.sleep(1)
-	goInitialPosition()
+	robot.forward(0.3)
 	print("POSICION FINAL")
 	print("x   "+str(robot.x))
 	print("y   "+str(robot.y))
@@ -65,69 +52,73 @@ def dance():
 
 def talk_movement():
 	playSound("talk")
-	turtle.forward(0.4)
+	robot.forward(0.4)
 	mip.setHeadLed(0,1,0,1)
 	playSound("talk")
 	time.sleep(1)
-	turtle.right(45)
+	robot.right(45)
 	time.sleep(1)
-	turtle.forward(0.1)
+	robot.forward(0.1)
 	playSound("talk")
 	time.sleep(1)
 	mip.setHeadLed(1,0,1,0)
-	turtle.left(180)
+	robot.left(180)
 	playSound("talk")
 	time.sleep(1)
-	turtle.forward(0.1)
+	robot.forward(0.1)
 	time.sleep(1)
-	turtle.left(55)
+	robot.left(55)
 	playSound("talk")
 	mip.setHeadLed(1,1,1,1)
 	time.sleep(1)
-	turtle.forward(0.4)
+	robot.forward(0.4)
+	goInitialPosition()
 
 def affirmation_movement():
 	mip.setHeadLed(2,2,2,2)
 	playSound("affirmation")
 	for i in range(4):
 		if((i%2)==0):
-			turtle.forward(0.025)
+			robot.forward(0.025)
 		else:
-			turtle.reverse(0.025)
+			robot.reverse(0.025)
 	mip.setHeadLed(1,1,1,1)
 
 def negation_movement():
-	turtle = mippy.Turtle(mip)
+	robot = mippy.Turtle(mip)
 	mip.setChestLed(255, 0, 0)
 	for i in range(4):
 		if((i%2)==0):
 			mip.setHeadLed(0,1,0,1)
-			turtle.right(35)
+			robot.right(35)
 		else:
 			mip.setHeadLed(1,0,1,0)
-			turtle.left(35)
+			robot.left(35)
 		playSound("negation")
 		time.sleep(0.2)
 	mip.setHeadLed(1,1,1,1)
 
 def action_movement():
-	turtle.forward(0.025)
+	robot.forward(0.035)
 	mip.setHeadLed(3,3,3,3)
+	time.sleep(0.2)
 	playSound("")
 	time.sleep(0.2)
-	turtle.right(360)
+	robot.right(360)
 	time.sleep(0.2)
-	turtle.reverse(0.025)
-	mip.setHeadLed(1,1,1,1)	
+	robot.reverse(0.035)
+	time.sleep(0.2)
+	mip.setHeadLed(1,1,1,1)
+	time.sleep(0.2)
 
 def question_movement():
 	for i in range(2):
 		if((i%2)==0):
 			mip.setHeadLed(0,1,0,1)
-			turtle.right(15)
+			robot.right(15)
 		else:
 			mip.setHeadLed(1,0,1,0)
-			turtle.left(15)
+			robot.left(15)
 		playSound("")
 		time.sleep(1)
 	mip.setHeadLed(1,1,1,1)
@@ -136,16 +127,66 @@ def start_movement():
 	mip.setChestLed(0, 0, 255)
 	mip.setHeadLed(3,3,3,3)
 	mip.playSound(43)
-	for i in range(4):
-		turtle.forward(0.2)
-		turtle.right(90)
-
-	for i in range(2):
-		turtle.right(720)
-		turtle.left(720)
 	time.sleep(2)
-	mip.playSound(35)
+	robot.forward(2.4)
 
+def go_back_movement():
+	playSound("affirmation")
+	time.sleep(0.2)
+	robot.right(180)
+	time.sleep(0.5)
+	robot.forward(2.4)
+	time.sleep(0.5)
+	robot.right(90)
+	time.sleep(0.5)
+	robot.forward(1.1)
+	time.sleep(0.5)
+	robot.left(90)
+	time.sleep(0.5)
+	robot.forward(2.2)
+	time.sleep(0.5)
+	robot.left(90)
+	time.sleep(0.5)
+	robot.forward(1.2)
+	time.sleep(0.5)
+	robot.left(450)
+	time.sleep(0.5)
+	playSound("affirmation")
+
+def show_coffee_movement():
+	mip.setHeadLed(3,3,3,3)
+	time.sleep(0.5)
+	playSound("affirmation")
+
+def show_work_room_movement():
+	mip.setHeadLed(3,3,3,3)
+	time.sleep(0.5)
+	playSound("affirmation")
+
+def show_workspace_movement():
+	mip.setHeadLed(3,3,3,3)
+	time.sleep(0.5)
+	playSound("affirmation")
+	time.sleep(0.5)
+	robot.left(90)
+	time.sleep(0.5)
+	robot.forward(1.2)
+	time.sleep(0.5)
+	robot.left(90)
+	time.sleep(0.5)
+	robot.forward(0.9)
+	time.sleep(0.5)
+	robot.left(90)
+	time.sleep(0.5)
+	playSound("talk")
+	time.sleep(0.5)
+	robot.left(90)
+	time.sleep(0.5)
+	robot.forward(0.5)
+	time.sleep(0.5)
+	robot.right(90)
+	time.sleep(0.5)
+	playSound("joy")
 
 def main(action):
 	if action=='affirmation':
@@ -162,6 +203,16 @@ def main(action):
 		question_movement()
 	elif action=='start':
 		start_movement()
+	elif action=='action':
+		action_movement()
+	elif action=='show_coffee':
+		show_coffee_movement()
+	elif action=='show_workspace':
+		show_workspace_movement()
+	elif action=='show_work_room':
+		show_work_room_movement()
+	elif action=='go_back':
+		go_back_movement()
 	else:
 		prueba_movement()
 		print("ninguno")
@@ -206,10 +257,16 @@ class Control:
 	def left(self, angle):
 		self.mip.turnByAngle(-angle*self.const)
 		self.ang+=angle
+		print("left")
+		print("x   "+str(robot.x))
+		print("y   "+str(robot.y))
 
 	def right(self, angle):
 		self.mip.turnByAngle(angle*self.const)
 		self.ang-=angle
+		print("right")
+		print("x   "+str(robot.x))
+		print("y   "+str(robot.y))
 
 	def forward(self, distance):
 		print("forward  "+str(distance))
@@ -232,6 +289,7 @@ class Control:
 		if(alpha>=270):
 			self.x+=distance*math.cos(((360-alpha)*math.pi)/180)
 			self.y-=distance*math.sin(((360-alpha)*math.pi)/180)
+
 	def reverse(self, distance):
 		print("reverse  "+str(distance))
 		print("x   "+str(robot.x))
@@ -258,7 +316,6 @@ class Control:
 logging.basicConfig(level=logging.DEBUG)
 gt = mippy.GattTool('hci0', "B4:99:4C:48:CA:23")
 mip = mippy.Mip(gt)
-turtle = mippy.Turtle(mip)
 robot=Control(mip)
 main(sys.argv[1])
 
