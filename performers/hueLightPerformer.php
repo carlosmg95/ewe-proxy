@@ -17,7 +17,7 @@ class HueLightPerformer
     function turnOn()
     {
         #HAY QUE CAMBIAR LA DIRECCION IP http://192.168.0.158
-        $url = 'http://192.168.1.127/api/ISrD4jnQ66SwRNZAhPrLqrOY1G1nHAJ8tA4Iw-rT/lights/1/state';
+        $url = 'http://192.168.1.100/api/ISrD4jnQ66SwRNZAhPrLqrOY1G1nHAJ8tA4Iw-rT/lights/1/state';
         $data = array(
             'on' => true
         );
@@ -37,7 +37,7 @@ class HueLightPerformer
     function turnOff()
     {
         #HAY QUE CAMBIAR LA DIRECCION IP http://192.168.0.158
-        $url = 'http://192.168.1.127/api/ISrD4jnQ66SwRNZAhPrLqrOY1G1nHAJ8tA4Iw-rT/lights/1/state';
+        $url = 'http://192.168.1.100/api/ISrD4jnQ66SwRNZAhPrLqrOY1G1nHAJ8tA4Iw-rT/lights/1/state';
         $data = array(
             'on' => false
         );

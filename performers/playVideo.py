@@ -21,7 +21,7 @@ casts = pychromecast.get_chromecasts()
 if len(casts) == 0:
     print('No Devices Found')
     exit()
-cast = casts[0]
+cast = casts[1]
 
 yt = youtube.YouTubeController()
 cast.register_handler(yt)
