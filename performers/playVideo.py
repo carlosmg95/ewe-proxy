@@ -21,7 +21,7 @@ casts = pychromecast.get_chromecasts()
 if len(casts) == 0:
     print('No Devices Found')
     exit()
-cast = casts[1]
+cast = next(cc for cc in casts if cc.device.friendly_name == 'Chromecast-GSILab')
 
 yt = youtube.YouTubeController()
 cast.register_handler(yt)
@@ -56,6 +56,8 @@ elif 'fire' in sys.argv:
 elif 'snow' in sys.argv:
     cast.play_media(('http://trailers.divx.com/divx_prod/profiles/WiegelesHeliSki_DivXPlus_19Mbps.mkv'), 'video/mkv')
 else:
-    cast.play_media(
-    ('http://commondatastorage.googleapis.com/gtv-videos-bucket/'
-     'sample/BigBuckBunny.mp4'), 'video/mp4')
+    yt.play_video('Z_fEKap24wU')
+    yt.start_play('Z_fEKap24wU')
+    #cast.play_media(
+    #('http://commondatastorage.googleapis.com/gtv-videos-bucket/'
+     #'sample/BigBuckBunny.mp4'), 'video/mp4')
