@@ -1,0 +1,79 @@
+[B4:99:4C:48:CA:23][LE]> connect
+connect
+Attempting to connect to B4:99:4C:48:CA:23
+[0;91mError: [0mconnect: No route to host (113)
+[B4:99:4C:48:CA:23][LE]> char-write-cmd 0x0013 062d00
+forward  0.4
+x   0
+y   0
+apha   90
+char-write-cmd 0x0013 700028010000
+char-write-cmd 0x0013 8a00010001
+char-write-cmd 0x0013 062d00
+char-write-cmd 0x0013 740b0f
+right
+x   -2.44929359829e-17
+y   0.4
+forward  0.1
+x   -2.44929359829e-17
+y   0.4
+apha   45
+char-write-cmd 0x0013 70000a010000
+char-write-cmd 0x0013 061500
+char-write-cmd 0x0013 8a01000100
+char-write-cmd 0x0013 732c0f
+left
+x   0.0707106781187
+y   0.470710678119
+char-write-cmd 0x0013 061400
+forward  0.1
+x   0.0707106781187
+y   0.470710678119
+apha   225
+char-write-cmd 0x0013 70000a010000
+char-write-cmd 0x0013 730d0f
+left
+x   -2.77555756156e-17
+y   0.4
+char-write-cmd 0x0013 061400
+char-write-cmd 0x0013 8a01010101
+forward  0.4
+x   -2.77555756156e-17
+y   0.4
+apha   280
+char-write-cmd 0x0013 700028010000
+go to initial
+x   0.0694592710668
+y   0.00607689879512
+angulo   280
+char-write-cmd 0x0013 74440f
+right
+x   0.0694592710668
+y   0.00607689879512
+angulo final   0
+char-write-cmd 0x0013 73160f
+left
+x   0.0694592710668
+y   0.00607689879512
+angulo inicial   90
+reverse  0.00607689879512
+x   0.0694592710668
+y   0.00607689879512
+apha   90
+char-write-cmd 0x0013 700101010000
+x   0.0694592710668
+y   0.0
+char-write-cmd 0x0013 73160f
+left
+x   0.0694592710668
+y   0.0
+forward  0.0694592710668
+x   0.0694592710668
+y   0.0
+apha   180
+char-write-cmd 0x0013 700007010000
+char-write-cmd 0x0013 74160f
+right
+x   0.0
+y   0.0
+char-write-cmd 0x0013 7605
