@@ -317,7 +317,5 @@ logging.basicConfig(level=logging.DEBUG)
 gt = mippy.GattTool('hci0', "B4:99:4C:48:CA:23")
 mip = mippy.Mip(gt)
 robot=Control(mip)
-t = threading.Thread(target=main, args=(sys.argv[1],))
-t.start()
-#main(sys.argv[1])
+main(sys.argv[1])
 
