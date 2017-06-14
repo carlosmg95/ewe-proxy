@@ -7,7 +7,7 @@ To Use:
 """
 import logging, argparse, time, sys, json,random, math
 import mippy
-
+import threading
 def prueba_movement():
 	
 	robot.forward(0.3)
@@ -317,5 +317,6 @@ logging.basicConfig(level=logging.DEBUG)
 gt = mippy.GattTool('hci0', "B4:99:4C:48:CA:23")
 mip = mippy.Mip(gt)
 robot=Control(mip)
-main(sys.argv[1])
+t = threading.Thread(target=main, args=(sys.argv[1],))
+#main(sys.argv[1])
 
