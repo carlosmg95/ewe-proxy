@@ -319,6 +319,5 @@ mip = mippy.Mip(gt)
 robot=Control(mip)
 t = threading.Thread(target=main, args=(sys.argv[1],))
 t.start()
-return
 #main(sys.argv[1])
 
