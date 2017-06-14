@@ -313,7 +313,7 @@ class Control:
 			self.y+=distance*math.sin(((360-alpha)*math.pi)/180)
 
 
-logging.basicConfig(level=logging.DEBUG)
+#logging.basicConfig(level=logging.DEBUG)
 gt = mippy.GattTool('hci0', "B4:99:4C:48:CA:23")
 mip = mippy.Mip(gt)
 robot=Control(mip)

@@ -3,7 +3,7 @@
 namespace Ewetasker\Performer;
 
 /**
-* 
+* shell_exec('python ./performers/control_mip.py ' . $parameter);
 */
 class MipPerformer
 {
@@ -15,6 +15,7 @@ class MipPerformer
 
     function controlMip($parameter)
     {
-        shell_exec('python ./performers/control_mip.py ' . $parameter);
+    	$orden = system( "python ./performers/control_mip.py $parameter" ); 
+    	return;
     }
 }
