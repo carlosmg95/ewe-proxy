@@ -4,7 +4,7 @@ $url = $_POST['url'];
 $key = $_POST['key'];
 $format = $_POST['format'];
 
-$filename = 'playVideo.py';
+$filename = 'performers/playVideo.py';
 $f = fopen($filename, 'r');
 $txt = fread($f, filesize($filename));
 fclose($f);
